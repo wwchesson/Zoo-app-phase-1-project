@@ -1,0 +1,58 @@
+.animal-list {
+  height: 1200px;
+  background-color: #d8bfd8;
+  /* border: 2px solid black; */
+}
+
+.animal-container {
+  height: 1200px;
+  background-color: #ffefd5;
+}
+
+.image-container {
+  /* float: center; */
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+
+  width: 50%;
+}
+
+.name {
+  text-align: center;
+  font-family: cursive;
+}
+
+h3 {
+  text-align: center;
+
+  font-size: xx-large;
+}
+
+h4 {
+  text-align: center;
+  font-size: xx-large;
+}
+
+#player {
+  width: 400px;
+  height: 400px;
+  background-size: cover;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+  width: 50%;
+  padding-top: 1cm;
+  padding-bottom: 1cm;
+}
+
+.row {
+  min-height: 1000px;
+}
+
+strong {
+  font-weight: bolder;
+}
