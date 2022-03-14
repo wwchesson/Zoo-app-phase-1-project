@@ -3,9 +3,10 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 let animalsArray = [];
-const animalSidebar = document.querySelector(".animal-list");
+const animalSidebar = document.querySelector(".Sidebar");
 const mainContainer = document.querySelector(".animal-container");
 const videoPlayer = () => document.querySelector("#player");
+const animalForm = document.querySelector("#new-animal");
 
 function populateAnimalList() {
   fetch("http://localhost:3000/animals")
@@ -61,3 +62,36 @@ function extractVideoID(url) {
     alert("Could not extract video ID.");
   }
 }
+
+animalForm.addEventListener("submit", (e) => {
+  e.preventDefault();
+  const form = e.target;
+  const newName = form.querySelector("#new-name").value;
+  const newImage = form.querySelector("#new-image").value;
+  const funFact = form.querySelector("#new-fact").value;
+  const newActivity = form.querySelector("#new-activity").value;
+  const newLink = form.querySelector("#new-link").value;
+
+  let newAnimalAdded = {
+    name: newName,
+    image: newImage,
+    fact: funFact,
+    activity: newActivity,
+    video: newLink,
+  };
+
+  fetch("http://localhost:3000/animals", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(newAnimalAdded),
+  })
+    .then((resp) => resp.json())
+    .then((data) => {
+      animalSidebar.innerHTML += renderEachName(data);
+    });
+
+  animalForm.reset();
+});
