@@ -9,6 +9,11 @@
   background-color: #ffefd5;
 }
 
+.animal-clicker {
+  cursor: pointer;
+  font-size: large;
+}
+
 .image-container {
   /* float: center; */
   width: 400px;
