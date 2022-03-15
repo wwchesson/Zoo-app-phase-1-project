@@ -3,6 +3,7 @@
 ### Summary
 
 This app was built for my 2.5 year old son, Shraddha, who loves animals. The app pulls from a JSON server to display a sidebar of animals, each of which when clicked displays information about that animal. Each animal display includes an embedded YouTube link. The app also has a submit feature on the sidebar that allows the user to add a new animal to the database.
+
 ![App Preview](Hnet.com-image.gif)
 
 ### Installation
