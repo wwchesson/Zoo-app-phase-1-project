@@ -28,7 +28,6 @@ function renderEachName(animal) {
 }
 
 document.addEventListener("click", (e) => {
-  //   console.log(e.target.className);
   if (e.target.className === "animal-clicker") {
     const foundAnimal = animalsArray.find(
       (animal) => animal.id === parseInt(e.target.id)
@@ -44,7 +43,6 @@ function renderMainContainerDetails(foundAnimal) {
     <h3 class="fact"><strong>Fun Fact</strong>: ${foundAnimal.fact}</h3>
     <h3 class="activity"><strong>Activity</strong>: ${foundAnimal.activity}</h3>
     <iframe id="player" class="inset-0 w-full h-full" frameborder="0" ></iframe>
-
     `;
 
   videoPlayer().src = `https://www.youtube.com/embed/${extractVideoID(
@@ -56,6 +54,7 @@ function extractVideoID(url) {
   var regExp =
     /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
   var match = url.match(regExp);
+  console.log(match);
   if (match && match[7].length == 11) {
     return match[7];
   } else {
@@ -90,6 +89,7 @@ animalForm.addEventListener("submit", (e) => {
   })
     .then((resp) => resp.json())
     .then((data) => {
+      animalsArray.push(data);
       animalSidebar.innerHTML += renderEachName(data);
     });
 

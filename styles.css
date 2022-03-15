@@ -90,3 +90,7 @@ select,
 textarea {
   color: white;
 }
+
+input.submit-button {
+  color: black;
+}
