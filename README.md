@@ -26,3 +26,5 @@ There are 5 total files that comprise this app:
 ### Additional Information
 
 Some of the major styling components like the top navigation bar and the two main containers that comprise the page are taken from materializecss. Minor styling components are specified in the styles.css file.
+
+Note: gif made with ezgif.com
